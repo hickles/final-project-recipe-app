@@ -1,4 +1,39 @@
 /* Add screen styles below */
-a.active {
-    font-weight: bold;
+h1 { 
+  margin-top: 24px;
+} 
+
+#inst {
+  margin-bottom: 24px;
+}
+
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    transition: transform 0.2s ease; 
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-5px); 
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
