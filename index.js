@@ -26,6 +26,5 @@ btn.addEventListener('click', () => {
             mealName.textContent = mealNameText;
             ingredientsList.innerHTML = `<ul>${ingredients.join('')}</ul>`;
             instructions.textContent = instructionsText;
-            recipeDetails.style.display = 'block'; // Show recipe details
         });
 });
