@@ -15,8 +15,7 @@ btn.addEventListener('click', () => {
             const mealImageSrc = meal.strMealThumb;
             const ingredients = [];
             const instructionsText = meal.strInstructions;
-
-            // Generate HTML for ingredients
+            
             for (let i = 1; i <= 20; i++) {
                 const ingredient = meal[`strIngredient${i}`];
                 const measure = meal[`strMeasure${i}`];
@@ -24,7 +23,6 @@ btn.addEventListener('click', () => {
                 ingredients.push(`<li>${ingredient} - ${measure}</li>`);
             }
 
-            // Update HTML elements
             mealImage.src = mealImageSrc;
             mealName.textContent = mealNameText;
             ingredientsList.innerHTML = `<ul>${ingredients.join('')}</ul>`;
