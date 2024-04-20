@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const recipeContainer = document.getElementById('recipeContainer2');
 
     searchForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form from submitting
-
+    
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput.value.trim()}`)
             .then(response => response.json())
             .then(data => displayRecipes(data.meals));
