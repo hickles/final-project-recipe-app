@@ -9,6 +9,12 @@
     justify-content: center;
 }
 
+#recipeContainer2 img {
+  width: 100%; /* Set the width of each image to fill the entire row */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add margin bottom to separate images */
+}
+
 h1 { 
   margin-top: 24px;
 } 
