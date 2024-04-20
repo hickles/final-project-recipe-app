@@ -9,9 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (searchValue !== '') {
             fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchValue}`)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     displayRecipes(data.meals);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
                 });
         } else {
             alert('Please enter an ingredient.');
@@ -42,5 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
 
 
