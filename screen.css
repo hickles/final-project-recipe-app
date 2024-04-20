@@ -1,6 +1,6 @@
 /* Add screen styles below */
-nav {
-    padding-left: 96px;
+.navbar-nav {
+    margin-left: 96px;
 }
 
 #recipeContainer2 {
