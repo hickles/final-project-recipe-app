@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchValue = searchInput.value.trim();
 
         if (searchValue !== '') {
-            fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+            fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchValue}`)
                 .then(response => response.json())
                 .then(data => {
                     displayRecipes(data.meals);
                 });
         } else {
-            alert('Please enter a search query.');
+            alert('Please enter an ingredient.');
         }
     });
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">${recipe.strMeal}</h5>
-                            <p class="card-text">Country: ${recipe.strArea}</p>
+                            <p class="card-text">ID: ${recipe.idMeal}</p>
                         </div>
                     </div>
                 `;
@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 recipeContainer.appendChild(card);
             });
         } else {
-            recipeContainer.innerHTML = '<p>No recipes found.</p>';
+            recipeContainer.innerHTML = '<p>No recipes found with this ingredient.</p>';
         }
     }
 });
+
 
