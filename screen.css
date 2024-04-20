@@ -5,12 +5,6 @@
     justify-content: center;
 }
 
-#recipeContainer2 .recipe {
-    width: 200px; /* Set the width of each card */
-    height: auto; /* Allow the height to adjust proportionally */
-    margin: 10px; /* Add margin around each card */
-}
-
 h1 { 
   margin-top: 24px;
 } 
