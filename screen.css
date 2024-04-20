@@ -7,8 +7,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 250px; 
-    width: auto;
+}
+
+#recipeContainer2 .recipe {
+    width: 200px; 
+    height: auto; 
+    margin: 10px; 
 }
 
 h1 { 
