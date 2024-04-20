@@ -10,9 +10,10 @@
 }
 
 #recipeContainer2 .recipe {
-    width: 200px; 
+    max-width: 200px; 
+    width: 100%; 
     height: auto; 
-    margin: 10px; 
+    margin: 10px;
 }
 
 h1 { 
