@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const recipeContainer = document.getElementById('recipeContainer2');
 
     searchForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); //needed chat gpt help with this
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput.value.trim()}`)
             .then(response => response.json())
             .then(data => displayRecipes(data.meals));
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayRecipes(recipes) {
         recipeContainer.innerHTML = ''; 
 
-        if (recipes) { 
+        if (recipes) { //needed chat gpt help with this section
             recipes.forEach(recipe => {
                 const card = document.createElement('div'); 
                 card.classList.add('recipe'); 
