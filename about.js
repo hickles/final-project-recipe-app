@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     searchForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form from submitting
 
-        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput.value.trim()}`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchInput.value.trim()}`)
             .then(response => response.json())
             .then(data => displayRecipes(data.meals));
     });
@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayRecipes(recipes) {
         recipeContainer.innerHTML = ''; 
 
-        if (recipes) { //
+        if (recipes) { 
             recipes.forEach(recipe => {
-                const card = document.createElement('div');
-                card.classList.add('recipe');
+                const card = document.createElement('div'); 
+                card.classList.add('recipe'); 
                 card.innerHTML = `
                     <h3>${recipe.strMeal}</h3>
                     <p>Country: ${recipe.strArea}</p>
@@ -26,10 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 recipeContainer.appendChild(card); 
             });
         } else {
-            recipeContainer.innerHTML = '<p>No recipes found with this ingredient.</p>'; 
+            recipeContainer.innerHTML = '<p>No recipes found from this area.</p>'; 
         }
     }
 });
+
 
 
 
