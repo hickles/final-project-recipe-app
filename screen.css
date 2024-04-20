@@ -12,7 +12,8 @@
 #recipeContainer2 img {
   width: 500px; 
   height: auto; 
-  margin-bottom: 20px; 
+  margin-bottom: 24px; 
+  justify-content: center;
 }
 
 h1 { 
