@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
-    const recipeContainer = document.getElementById('recipeContainer');
+    const recipeContainer = document.getElementById('recipeContainer2');
 
     searchForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form from submitting
