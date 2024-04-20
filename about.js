@@ -4,52 +4,33 @@ document.addEventListener('DOMContentLoaded', function () {
     const recipeContainer = document.getElementById('recipeContainer');
 
     searchForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const searchValue = searchInput.value.trim();
+        event.preventDefault(); // Prevent form from submitting
 
-        if (searchValue !== '') {
-            fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchValue}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    displayRecipes(data.meals);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        } else {
-            alert('Please enter an ingredient.');
-        }
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput.value.trim()}`)
+            .then(response => response.json())
+            .then(data => displayRecipes(data.meals));
     });
 
     function displayRecipes(recipes) {
-        recipeContainer.innerHTML = ''; // Clear previous results
+        recipeContainer.innerHTML = ''; 
 
-        if (recipes) {
+        if (recipes) { //
             recipes.forEach(recipe => {
                 const card = document.createElement('div');
-                card.classList.add('col-md-4', 'mb-4');
-
-                const cardContent = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${recipe.strMeal}</h5>
-                            <p class="card-text">ID: ${recipe.idMeal}</p>
-                        </div>
-                    </div>
+                card.classList.add('recipe');
+                card.innerHTML = `
+                    <h3>${recipe.strMeal}</h3>
+                    <p>Country: ${recipe.strArea}</p>
+                    <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
                 `;
-                card.innerHTML = cardContent;
-                recipeContainer.appendChild(card);
+                recipeContainer.appendChild(card); 
             });
         } else {
-            recipeContainer.innerHTML = '<p>No recipes found with this ingredient.</p>';
+            recipeContainer.innerHTML = '<p>No recipes found with this ingredient.</p>'; 
         }
     }
 });
+
 
 
 
