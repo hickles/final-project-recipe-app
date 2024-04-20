@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const recipeContainer = document.getElementById('recipeContainer');
 
     searchForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form from submitting
+        event.preventDefault(); 
 
-        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchInput.value.trim()}`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput.value.trim()}`)
             .then(response => response.json())
             .then(data => displayRecipes(data.meals));
+
     });
 
     function displayRecipes(recipes) {
@@ -26,10 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 recipeContainer.appendChild(card); 
             });
         } else {
-            recipeContainer.innerHTML = '<p>No recipes found from this area.</p>'; 
+            recipeContainer.innerHTML = '<p>No recipes found with this ingredient.</p>'; 
         }
     }
 });
+
 
 
 
