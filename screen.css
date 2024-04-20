@@ -9,13 +9,6 @@
     justify-content: center;
 }
 
-#recipeContainer2 .recipe {
-    max-width: 200px; 
-    width: 100%; 
-    height: auto; 
-    margin: 10px;
-}
-
 h1 { 
   margin-top: 24px;
 } 
